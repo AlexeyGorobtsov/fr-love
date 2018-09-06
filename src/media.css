@@ -102,6 +102,11 @@
 }
 
 @media (max-width: 1360px) {
+
+    .wrap-side {
+        display: block;
+    }
+
     .header-wrap {
         background: url("./img/ipadMain.png") no-repeat;
         background-size: cover;
@@ -207,11 +212,12 @@
     }
 
     .wrap-films .col:nth-child(3) {
-        padding-top: 30vh;
+        padding-top: 10vh;
+        padding-bottom: 9vh;
     }
 
     .wrap-title {
-        height: 29vh;
+        height: 24vh;
     }
 
     .wrap-biography {
@@ -478,8 +484,21 @@
         left: 126px;
     }
 
-    .wrap-button .first-border-box, .wrap-button .second-border-box {
+    .wrap-button .first-border-box {
         left: 112px;
+    }
+
+    .wrap-button .second-border-box {
+        left: 145px;
+    }
+
+    .wrap-button .second-border-box {
+        left: 124px;
+    }
+
+
+    .wrap-button .first-border-box, .wrap-button .second-border-box {
+        width: 218px;
     }
 }
 
@@ -509,7 +528,7 @@
     }
 
     .wrap-blog .col-blog:nth-child(1) .title-blog {
-        top: 36vh;
+        top: 340px;
     }
 
     section.theater {
@@ -569,11 +588,11 @@
     }
 
     .wrap-button .second-border-box {
-        left: 98px;
+        left: 96px;
     }
 
-    .wrap-blog .col-blog:nth-child(1) .title-blog {
-        top: 53vh;
+    .wrap-button .first-border-box, .wrap-button .second-border-box {
+        width: 228px;
     }
 }
 
