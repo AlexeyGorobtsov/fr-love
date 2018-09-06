@@ -58,20 +58,71 @@ const slid = {
       const slickNext = document.querySelector('.slick-next');
       const slickPrev = document.querySelector('.slick-prev');
       const photoWidth = document.querySelectorAll('.wrap-photo .photo')[0].clientWidth;
+
+
+
       slickPrev.addEventListener('click', () => {
           const posX = document.querySelectorAll('.slick-track')[0].style.transform;
-          if ((document.querySelectorAll('.wrap-photo')[(document.querySelectorAll('.wrap-photo').length -1)].getClientRects()[0].x - Number(photoWidth)) > document.querySelectorAll('.slick-list')[0].clientWidth) {
+          if ((document.querySelectorAll('.wrap-photo')[(document.querySelectorAll('.wrap-photo').length -1)].getClientRects()[0].x) > document.querySelectorAll('.slick-list')[0].clientWidth) {
               document.querySelectorAll('.slick-track')[0].style.transform = `translate3d(${(Number(String(posX).slice(12, -13)) - 200)}px, 0px, 0px)`;
+          } else if(((document.querySelectorAll('.wrap-photo')[(document.querySelectorAll('.wrap-photo').length -1)].getClientRects()[0].x) - document.querySelectorAll('.slick-list')[0].clientWidth) < 200) {
+              document.querySelectorAll('.slick-track')[0].style.transform = `translate3d(${(Number(String(posX).slice(12, -13)) + 200)}px, 0px, 0px)`;
           }
       });
 
       slickNext.addEventListener('click', () => {
 
           const posX = document.querySelectorAll('.slick-track')[0].style.transform;
-          if (Number(String(posX).slice(12, -13)) !== 0) {
+          const back = () => {
+              if (Number(String(document.querySelectorAll('.slick-track')[0].style.transform).slice(12, -13)) > 190) {
+                  document.querySelectorAll('.slick-track')[0].style.transform = `translate3d(${(Number(String(posX).slice(12, -13)) - 200)}px, 0px, 0px)`;
+                  console.log('test2')
+              }
+          };
+          if (Number(String(posX).slice(12, -13)) < 200) {
               document.querySelectorAll('.slick-track')[0].style.transform = `translate3d(${(Number(String(posX).slice(12, -13)) + 200)}px, 0px, 0px)`;
+              setTimeout(back, 400);
+          } else {
+              document.querySelectorAll('.slick-track')[0].style.transform = `translate3d(${(Number(String(posX).slice(12, -13)) - 200)}px, 0px, 0px)`;
           }
       })
   }
 };
 slid.init();
+
+const tabs = {
+    init: function () {
+        const span = document.querySelectorAll('.films-date span');
+        const tabs = document.querySelectorAll('.wrap-tabs');
+        const cleanActive = () => {
+            span.forEach(item => {
+                item.classList.remove('active');
+            })
+        };
+        const cleanTabs = () => {
+            tabs.forEach(item => {
+                item.style.display = 'none';
+            })
+        };
+        const showTabs = () => {
+            for (let i = 0; i <span.length; i++ ) {
+                span[i].classList;
+                if (span[i].classList.value === 'active') {
+                    tabs[i].style.display = 'block';
+                }
+            }
+        };
+        span.forEach(item => {
+            item.addEventListener('click', e => {
+                cleanActive();
+                cleanTabs();
+                e.target.classList.add('active');
+                showTabs();
+
+
+            });
+        })
+    }
+};
+
+tabs.init();
