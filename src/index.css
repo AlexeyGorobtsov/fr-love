@@ -157,13 +157,17 @@ nav li a {
 /*==section photo*/
 
 
-.slick-track {
+.slick-track, .slick-track-g {
     opacity: 1;
     width: 2800px;
     transition: transform 1s ease;
 }
 
-.slick-list {
+.slick-list-g {
+    width: 3100px;
+}
+
+.slick-list, .slick-list-g {
     position: relative;
     display: block;
     overflow: hidden;
@@ -171,7 +175,7 @@ nav li a {
     padding: 0;
 }
 
-.slick-prev, .slick-next {
+.slick-prev, .slick-next, .next-g, .prev-g {
     font-size: 0;
     line-height: 0;
     position: absolute;
@@ -190,7 +194,7 @@ nav li a {
     background: transparent;
 }
 
-.slick-next {
+.slick-next, .next-g {
     right: 30px;
     z-index: 9;
     background: url("./img/slidArrow.png") no-repeat;
@@ -199,7 +203,7 @@ nav li a {
 
 }
 
-.slick-prev {
+.slick-prev, .prev-g {
     left: 30px;
     z-index: 9;
     background: url("./img/trinangle.png") no-repeat;
@@ -246,6 +250,8 @@ section.photo-s {
 .slider-responsive {
     position: relative;
     z-index: 3;
+    overflow: hidden;
+    margin: 0 auto;
 }
 
 .wrap-slid .photo {
@@ -779,6 +785,10 @@ section.biography {
 
 /*==section gallery==*/
 
+section.gallery {
+    background: rgb(245, 245, 248);
+}
+
 .wrap-gallery {
     background: rgb(245, 245, 248);
     display: flex;
@@ -798,10 +808,19 @@ section.biography {
     position: relative;
 }
 
-.wrap-gallery .col-gallery:nth-child(1) .gallery-photo {
+.wrap-gallery .col-gallery:nth-child(1) .gallery-photo,
+.wrap-gallery .col-gallery:nth-child(5) .gallery-photo,
+.wrap-gallery .col-gallery:nth-child(6) .gallery-photo,
+.wrap-gallery .col-gallery:nth-child(7) .gallery-photo,
+.wrap-gallery .col-gallery:nth-child(8) .gallery-photo,
+.wrap-gallery .col-gallery:nth-child(9) .gallery-photo {
     background: url("./img/g_phot_1png.png") no-repeat;
     width: 230px;
     height: 230px;
+}
+
+.wrap-gallery .col-gallery:last-child {
+    width: 230px;
 }
 
 .wrap-gallery .col-gallery:nth-child(2) .gallery-photo {
@@ -824,6 +843,7 @@ section.biography {
 
 .wrap-gallery .col-gallery:nth-child(1) {
     top: 20px;
+
 }
 
 .wrap-gallery .col-gallery:nth-child(3) {
@@ -862,7 +882,7 @@ section.biography {
     width: 56px;
     height: 69px;
     position: relative;
-    right: 165px;
+    right: 110px;
     z-index: 9;
     top: 22px;
 }
@@ -875,7 +895,7 @@ section.biography {
 
 .inner-wrap-href {
     position: relative;
-    right: 54px;
+    right: 33px;
     bottom: 54px;
 }
 
@@ -1052,7 +1072,7 @@ form div label {
     border-radius: 4px;
     background-color: rgb(255, 255, 255);
     box-shadow: 0 40px 60px 0 rgba(0, 0, 0, 0.3);
-    width: 63%;
+    width: 50%;
     height: 470px;
     padding: 50px 30px 0 30px;
 }

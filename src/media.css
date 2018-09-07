@@ -279,6 +279,10 @@
 
 @media (max-width: 780px) {
 
+    .wrap-form {
+        width: 77%;
+    }
+
     .wrap-biography .col-biog {
         padding-left: 14px;
         padding-right: 14px;
