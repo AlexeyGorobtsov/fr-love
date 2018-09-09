@@ -15,29 +15,28 @@
         </header>
         <nav>
             <ul>
-                <li><a href="#">Фото</a></li>
-                <li><a href="#">Видео</a></li>
-                <li><a href="#">Блог</a></li>
-                <li><a href="#">Фильмография</a></li>
-                <li><a href="#">Обратная связь</a></li>
+                <li><a href="#photo">Фото</a></li>
+                <li><a href="#video">Видео</a></li>
+                <li><a href="#blog">Блог</a></li>
+                <li><a href="#filmography">Фильмография</a></li>
+                <li><a href="#feedback">Обратная&#160;связь</a></li>
             </ul>
         </nav>
         <div class="wrap-side">
             <div id="mySidenav" class="sidenav">
-                <a href="#" class="closebtn">&times;</a>
-                <li><a href="#">Фото</a></li>
-                <li><a href="#">Видео</a></li>
-                <li><a href="#">Блог</a></li>
-                <li><a href="#">Фильмография</a></li>
-                <li><a href="#">Обратная&#160;связь</a></li>
+                <a class="closebtn">&times;</a>
+                <li><a href="#photo">Фото</a></li>
+                <li><a href="#video">Видео</a></li>
+                <li><a href="#blog">Блог</a></li>
+                <li><a href="#filmography">Фильмография</a></li>
+                <li><a href="#feedback">Обратная&#160;связь</a></li>
             </div>
             <span id="menu">&#9776;</span>
         </div>
         <div class="wrap-text">
-            <!--<h2>Любовь<span>Козий</span></h2>-->
         </div>
     </div>
-    <section class="photo-s">
+    <section id="photo" class="photo-s">
         <div class="slider-responsive">
             <button class="slick-prev"></button>
             <div class="slick-list">
@@ -136,31 +135,51 @@
             <button  class="slick-next"></button>
         </div>
         <div class="number-bg">
-            <!--<div class="divider"></div>-->
             <span>263</span>
         </div>
     </section>
-    <section class="blog">
+    <section id="blog" class="blog">
         <div class="wrap-blog">
             <div class="col-blog">
-                <div class="title-blog">
-                    <div class="divider"></div>
-                </div>
                 <div class="divider"></div>
+            </div>
+            <div class="col-blog">
+                <img src="" alt="" class="title-blog">
             </div>
             <div class="col-blog">
                 <div class="blog-column">
                     <div class="blog-item">
                         <p class="description-item">Генеральный прогон фильма-спектакля «Роковое влечение»</p>
                         <p class="blog-date">13.05.2018</p>
+                        <div class="hidden">
+                            <img class="hidden-img">
+                            <div class="desc-item">
+                                <h4 class="hidden-title">Что такое Lorem Ipsum?</h4>
+                            <p class="hidden-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus asperiores aspernatur at beatae consectetur, corporis cum delectus et excepturi in iure labore molestiae molestias, officia optio provident quam quasi voluptates!</p>
+                            </div>
+                        </div>
                     </div>
                     <div class="blog-item">
                         <p class="description-item">Съёмочные будни в сериале и немного про фехтование</p>
                         <p class="blog-date">04.05.2018</p>
+                        <div class="hidden">
+                            <img class="hidden-img">
+                            <div class="desc-item">
+                                <h2 class="hidden-title">Что такое Lorem Ipsum?</h2>
+                                <p class="hidden-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus asperiores aspernatur at beatae consectetur, corporis cum delectus et excepturi in iure labore molestiae molestias, officia optio provident quam quasi voluptates!</p>
+                            </div>
+                        </div>
                     </div>
                     <div class="blog-item">
                         <p class="description-item">Участие в передаче «Пусть говорят!» на Первом канале</p>
                         <p class="blog-date">02.05.2018</p>
+                        <div class="hidden">
+                            <img class="hidden-img">
+                            <div class="desc-item">
+                                <h4 class="hidden-title">Откуда он появился?</h4>
+                                <p class="hidden-desc">Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах.</p>
+                            </div>
+                        </div>
                     </div>
                     <div class="wrap-href">
                         <a href="#">Перейти в блог</a>
@@ -171,7 +190,7 @@
         </div>
 
     </section>
-    <section class="theater">
+    <section id="video" class="theater">
         <div class="col">
             <h4>ТИ им. Б. Щукина <span>(дипломные спектакли)</span></h4>
             <div class="theater-first-border"></div>
@@ -233,7 +252,7 @@
             </div>
         </div>
     </section>
-    <section class="film">
+    <section id="filmography" class="film">
         <div class="wrap-films">
             <div class="col"></div>
             <div class="col">
@@ -322,34 +341,60 @@
         </div>
     </section>
     <section class="gallery">
-        <div class="wrap-gallery">
-            <div class="col-gallery">
-                <div class="gallery-first-border"></div>
-                <div class="gallery-second-border"></div>
-                <div class="gallery-photo"></div>
-            </div>
-            <div class="col-gallery">
-                <div class="gallery-box-shadow"></div>
-                <div class="gallery-photo"></div>
-            </div>
-            <div class="col-gallery">
-                <div class="gallery-first-border"></div>
-                <div class="gallery-second-border"></div>
-                <div class="gallery-photo"></div>
-            </div>
-            <div class="col-gallery">
-                <div class="gallery-box-shadow"></div>
-                <div class="gallery-photo"></div>
-            </div>
-            <div class="col-gallery">
-                <div class="wrap-gallery-href"></div>
-                <div class="inner-wrap-href">
-                    <a class="gallery-href" href="#">Подписаться</a>
-                    <div class="arrow"></div>
-                    <div class="mail">@lubov_koziy</div>
+        <div class="slider-responsive">
+                <button class="prev-g"></button>
+                <div class="slick-list-g">
+                    <div class="slick-track-g" style="transform:translate3d(0, 0, 0);">
+                        <div class="wrap-gallery">
+                            <div class="col-gallery">
+                                <div class="gallery-first-border"></div>
+                                <div class="gallery-second-border"></div>
+                                <div class="gallery-photo"></div>
+                            </div>
+                            <div class="col-gallery">
+                                <div class="gallery-box-shadow"></div>
+                                <div class="gallery-photo"></div>
+                            </div>
+                            <div class="col-gallery">
+                                <div class="gallery-first-border"></div>
+                                <div class="gallery-second-border"></div>
+                                <div class="gallery-photo"></div>
+                            </div>
+                            <div class="col-gallery">
+                                <div class="gallery-box-shadow"></div>
+                                <div class="gallery-photo"></div>
+                            </div>
+                            <div class="col-gallery">
+                                <div class="gallery-first-border"></div>
+                                <div class="gallery-second-border"></div>
+                                <div class="gallery-photo"></div>
+                            </div>
+                            <div class="col-gallery">
+                                <div class="gallery-box-shadow"></div>
+                                <div class="gallery-photo"></div>
+                            </div>
+                            <div class="col-gallery">
+                                <div class="gallery-first-border"></div>
+                                <div class="gallery-second-border"></div>
+                                <div class="gallery-photo"></div>
+                            </div>
+                            <div class="col-gallery">
+                                <div class="gallery-box-shadow"></div>
+                                <div class="gallery-photo"></div>
+                            </div>
+                            <div class="col-gallery">
+                                <div class="wrap-gallery-href"></div>
+                                <div class="inner-wrap-href">
+                                    <a class="gallery-href" href="#">Подписаться</a>
+                                    <div class="arrow"></div>
+                                    <div class="mail">@lubov_koziy</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <button class="next-g"></button>
             </div>
-        </div>
         <div class="separator"></div>
             <div class="wrap-quote">
                 <div class="col-quote">
@@ -365,7 +410,7 @@
                 <div class="col-quote"></div>
         </div>
     </section>
-    <section class="feedback">
+    <section id="feedback" class="feedback">
         <div class="wrap-feedback">
             <div class="col-feedback">
                 <div class="inner-wrap">
@@ -406,6 +451,16 @@
             </div>
         </div>
     </section>
+    <div class="modal-window modal">
+        <div class="modal-window-inner">
+            <div class="container-modal-window">
+                <div class="wrap-modal">
+                    <span class="close closeW">×</span>
+                    <div class="inner-container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
     <footer>
         <div class="wrap-footer">
             <div>
