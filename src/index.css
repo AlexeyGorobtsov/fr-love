@@ -628,7 +628,7 @@ section.theater {
 }
 
 .modal-window {
-    position: fixed;
+    /*position: fixed;*/
     left: 0;
     top: 0;
     right: 0;
@@ -646,7 +646,7 @@ section.theater {
     width: 100%;
     overflow: initial;
     box-sizing: border-box;
-    max-width: 420px;
+    max-width: 620px;
     min-width: 320px;
     z-index: 9;
     opacity: 1;
@@ -661,6 +661,17 @@ section.theater {
 
     -webkit-animation: fadeEffect .5s;
     animation: fadeEffect .5s;
+}
+
+.wrap-modal .inner-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+}
+
+.inner-container img.hidden-img {
+    max-width: 420px;
 }
 
 .hidden-title {
@@ -689,14 +700,14 @@ img {
 
 .close {
     float: right;
-    font-size: 21px;
+    font-size: 40px;
     font-weight: 700;
     line-height: 1;
     text-shadow: 0 1px 0 #fff;
-    position: relative;
-    top: -7px;
+    position: absolute;
+    top: 6px;
     cursor: pointer;
-    right: -14px;
+    right: 6px;
 }
 
 .close {

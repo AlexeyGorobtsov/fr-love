@@ -53,7 +53,11 @@ class MainPage {
         }
     }
 
-
+    static showOneSelectorImg(selector, im) {
+        selector.forEach(item => {
+            item.src = im;
+        })
+    }
 }
 
 export default MainPage;

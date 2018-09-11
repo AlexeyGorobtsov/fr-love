@@ -1,26 +1,40 @@
 import './index.css';
 import './media.css';
-// import im from './images'
+import './lightbox.css'
+//import im from './images'
 import MP from './MainPage';
 
 // //TODO clean
 // import test from './img/theatre_item3.png'
 // import titleBlog from './img/blog.png'
+//
 // document.querySelector('.title-blog').src = titleBlog;
 // const bgImage = document.querySelectorAll('.hidden-img');
 // bgImage.forEach(item => {
-//    item.src = test;
+//     item.src = test;
 // });
 
 const mainPage = new MP;
 
-const imgObj = {
-    theatre_item3: MP.check(document.querySelector('.theatre_item3')),
-    bgBlog: MP.check(document.querySelector('.bgBlog')),
-};
+// const imgObj = {
+//     theatre_item3: MP.check(document.querySelector('.theatre_item3')),
+//     bgBlog: MP.check(document.querySelector('.bgBlog')),
+//     // photo_v1: MP.check(document.querySelector('.photo_v1')),
+//     // photo_v2: MP.check(document.querySelector('.photo_v2')),
+//     // photo_v3: MP.check(document.querySelector('.photo_v3')),
+//     // photo_v4: MP.check(document.querySelector('.photo_v4')),
+// };
 
 MP.closeModalWindow();
 // mainPage.showAllImg(imgObj, im);
+// MP.showOneSelectorImg(document.querySelectorAll('.img_lights'), im.img_lights);
+// MP.showOneSelectorImg(document.querySelectorAll('.img_mountains'), im.img_mountains);
+// MP.showOneSelectorImg(document.querySelectorAll('.img_nature'), im.img_nature);
+// MP.showOneSelectorImg(document.querySelectorAll('.img_snow'), im.img_snow);
+// MP.showOneSelectorImg(document.querySelectorAll('.photo_v1'), im.photo_v1);
+// MP.showOneSelectorImg(document.querySelectorAll('.photo_v2'), im.photo_v2);
+// MP.showOneSelectorImg(document.querySelectorAll('.photo_v3'), im.photo_v3);
+// MP.showOneSelectorImg(document.querySelectorAll('.photo_v4'), im.photo_v4);
 
 
 const photo = document.querySelectorAll('.wrap-photo .photo');
@@ -36,11 +50,13 @@ photo.forEach(item => {
     });
 });
 
-const menu = document.getElementById('menu');
-const closeBtn = document.querySelector('.closebtn');
 
 const sideNav = {
     init: function () {
+
+        const menu = document.getElementById('menu');
+        const closeBtn = document.querySelector('.closebtn');
+
         const openNav = () => {
             document.getElementById("mySidenav").style.width = "250px";
         };
@@ -94,7 +110,6 @@ const bgItem = {
 };
 bgItem.init();
 
-
 const slid = {
     init: function () {
         const slickNext = document.querySelector('.slick-next');
@@ -111,8 +126,16 @@ const slid = {
             };
 
             if (((document.querySelectorAll(wrapPhoto)[(document.querySelectorAll(wrapPhoto).length - 1)].getClientRects()[0].x) - document.querySelectorAll(slickList)[0].clientWidth) > -130) {
-                document.querySelectorAll(slickTrack)[0].style.transform = `translate3d(${(Number(String(posX).slice(12, -13)) - 200)}px, 0px, 0px)`;
-                setTimeout(forward, 400);
+                const myPromise = new Promise(resolve => {
+                    setTimeout(() => {
+                        document.querySelectorAll(slickTrack)[0].style.transform = `translate3d(${(Number(String(posX).slice(12, -13)) - 200)}px, 0px, 0px)`;
+                        resolve(document.querySelectorAll(slickTrack)[0].style.transform);
+                    }, 200)
+                });
+                myPromise.then(() => {
+                    setTimeout(forward, 400);
+                });
+
             } else {
                 document.querySelectorAll(slickTrack)[0].style.transform = `translate3d(${(Number(String(posX).slice(12, -13)) + 200)}px, 0px, 0px)`;
             }
@@ -186,3 +209,72 @@ const tabs = {
     }
 };
 tabs.init();
+
+const lightBox = {
+    init: function () {
+        const openModal = document.querySelectorAll('.photo img');
+
+        const closeModal = document.querySelectorAll('.close-lightbox');
+        closeModal.forEach(item => {
+            item.addEventListener('click', () => {
+                MP.check(document.getElementById('myModal')).style.display = 'none';
+            })
+        });
+
+        let slideIndex = 1;
+
+        const showSlides = (n) => {
+            const slides = document.querySelectorAll('.mySlides');
+            const dots = document.querySelectorAll('.demo');
+            if (n > slides.length) {
+                slideIndex = 1;
+            }
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+
+            slides.forEach(item => item.style.display = 'none');
+
+            dots.forEach(item => {
+                item.className = item.className.replace(' active', '');
+            });
+
+            slides[slideIndex - 1].style.display = 'block';
+            dots[slideIndex - 1].className += ' active';
+
+        };
+
+        const plusSlides = n => showSlides(slideIndex += n);
+
+        showSlides(slideIndex);
+
+        const currentSlide = n => showSlides(slideIndex = n);
+
+
+        for (let i = 0; i < openModal.length; i++) {
+            openModal[i].addEventListener('click', () => {
+                document.getElementById('myModal').style.display = 'block';
+                currentSlide(1 + i);
+            })
+        }
+
+        const innerImg = MP.check(document.querySelectorAll('.wrap-inner-img .inner-img img'));
+        for (let z = 0; z < innerImg.length; z++) {
+            innerImg[z].addEventListener('click', () => {
+                currentSlide(1 + z);
+            })
+        }
+
+        const next = MP.check(document.querySelector('.prev-lb'));
+        next.addEventListener('click', () => {
+            plusSlides(-1);
+        });
+
+        const prev = MP.check(document.querySelector('.next-lb'));
+        prev.addEventListener('click', () => {
+            plusSlides(1)
+        })
+    }
+};
+
+lightBox.init();

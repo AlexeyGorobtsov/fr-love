@@ -46,11 +46,11 @@
 /*==IpadPro==*/
 @media (max-width: 1366px) {
     .rectangle {
-        right: 112px;
+        right: 79%;
     }
 
     .wrap-arrow {
-        right: 86px;
+        right: 94%;
     }
 
     .wrap-blog .col-blog:nth-child(1) .title-blog {
@@ -282,6 +282,16 @@
 }
 
 @media (max-width: 820px) {
+
+    .close {
+        top: -2px;
+        right: 5px;
+    }
+
+    .modal-window {
+        position: fixed;
+    }
+
     .wrap-blog .col-blog:nth-child(1) .title-blog {
         top: 46vw;
     }
